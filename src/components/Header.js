@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => (
-    <header className = "header">
+    <HeaderContainer>
         <h1>Recept Hemsida</h1>
-        <nav>
+        <NavLinks>
             <Link to="/">Hem</Link>
-            <Link to="saved">Sparade Recept</Link>
-        </nav>
-    </header>
+            <Link to="/saved">Sparade Recept</Link>
+        </NavLinks>
+
+    </HeaderContainer>
+
 );
 
 export default Header;
