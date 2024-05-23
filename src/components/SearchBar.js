@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react';
 import './SearchBar.css';
 
 const SearchBar = ({onSearch}) => {
@@ -12,14 +12,18 @@ const SearchBar = ({onSearch}) => {
     return (
         <div className = "search-bar">
 
-            <input type="text" value={query}  placeholder="Sök efter recept..." onChange={(e) => setQuery(e.target.value)}></input>
+            <input 
+            type="text" 
+            value={query}  
+            placeholder="Sök efter recept..." 
+            onChange={(e) => setQuery(e.target.value)} 
+            
+            />
+
             <button onClick={handleSearch}>Sök</button>
         </div>
 
-    );
-
-
-    
-}
+    ); 
+};
 
 export default SearchBar;
