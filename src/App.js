@@ -10,10 +10,11 @@ function App() {
   return (
 
     <Router>
+
       <Header />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/saved" element={<SavedRecipes />} />
       </Routes>
       
