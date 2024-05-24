@@ -17,10 +17,14 @@ const App = () => {
 
             <Route path="/" element={<Home />} />
             <Route path="/saved" element={<SavedRecipes />} />
-            {/* Error route */}
-            <Route path="*" element={<NotFound />} />
+
         </Routes>
         </Router>
+
+        /*
+            {/* Error route *}
+            <Route path="*" element={<NotFound />} />
+        */
 
     );
 };
