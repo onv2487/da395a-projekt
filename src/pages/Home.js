@@ -8,7 +8,7 @@ const Home = () => {
     const [recipes, setRecipes] = useState([]);
 
     const handleSearch = (query) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=YOUR_API_KEY`)
+        axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`)
         .then(response => {
             setRecipes(response.data.results);
         });
