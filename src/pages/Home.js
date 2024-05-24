@@ -38,8 +38,8 @@ const Home = () => {
         <div className="home">
             <SearchBar onSearch={handleSearch} />
             <div className="recipes-container">
-                {recipes && recipes.map(recipe => (
-                    <RecipeCard key={recipe.imdbID} recipe={recipe} onSave={handleSave} />
+                {recipes.map(recipe => (
+                    <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
                 ))}
                 {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
             </div>
