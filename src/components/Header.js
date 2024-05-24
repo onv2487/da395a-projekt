@@ -4,10 +4,10 @@ import './Header.css';
 
 const Header = () => (
     <div className="header-container">
-        <h1>Recept Hemsida</h1>
+        <h1 className="logo">Recept Hemsida</h1>
         <div className="nav-links">
-            <Link to="/">Hem</Link>
-            <Link to="/saved">Sparade Recept</Link>
+            <Link to="/" className="nqv-link">Hem</Link>
+            <Link to="/saved" className="nav-link">Sparade Recept</Link>
         </div>
 
     </div>
