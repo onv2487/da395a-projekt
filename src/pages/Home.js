@@ -11,7 +11,7 @@ const Home = () => {
         axios.get(`http://www.omdbapi.com/?apikey=870bf5be&s=${encodeURIComponent(query.trim())}`)
         //(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=YOUR_API_KEY`)
         .then(response => {
-            setRecipes(response.data.results);
+            setRecipes(response.data.Search || []);
         })
 
         .catch(error => {
@@ -33,8 +33,8 @@ const Home = () => {
         <div className="home">
             <SearchBar onSearch={handleSearch} />
             <div className="recipes-container">
-                {recipes.map(recipe => (
-                    <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
+                {recipes && recipes.map(recipe => (
+                    <RecipeCard key={recipe.imdbID} recipe={recipe} onSave={handleSave} />
                 ))}
                 {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
             </div>
