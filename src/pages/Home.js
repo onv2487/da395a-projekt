@@ -10,7 +10,13 @@ const Home = () => {
     const handleSearch = (query) => {
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=4f5c4482685449dbb9a7d54b3c97b2e5`)
         .then(response => {
-            setRecipes(response.data.Search || []);
+            const searchResults = response.data.results || [];
+            const recipesData = searchResults.map(result => ({
+                id: result.id,
+                title: result.title,
+                image: result.image,
+            }));
+            setRecipes(recipesData);
         })
 
         .catch(error => {
