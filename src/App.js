@@ -1,6 +1,7 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import SearchBar from './components/SearchBar';
 import Home from './pages/Home';
 import SavedRecipes from './pages/SavedRecipes';
 import './App.css';

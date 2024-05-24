@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import SearchBar from "../components/SearchBar";
 import RecipeCard from "../components/RecipeCard";
-import "./Home.css;";
+import "./Home.css";
 
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
