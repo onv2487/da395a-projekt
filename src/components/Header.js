@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => (
-    <HeaderContainer>
+    <div className="header-container">
         <h1>Recept Hemsida</h1>
-        <NavLinks>
+        <div className="nav-links">
             <Link to="/">Hem</Link>
             <Link to="/saved">Sparade Recept</Link>
-        </NavLinks>
+        </div>
 
-    </HeaderContainer>
+    </div>
 
 );
 
