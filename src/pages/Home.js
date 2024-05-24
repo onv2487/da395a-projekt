@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios';
-import SearchBar from "../components/SearchBar";
-import RecipeCard from "../components/RecipeCard";
+import SearchBar from "../components/SearchBar/SearchBar";
+import RecipeCard from "../components/RecipeCard/RecipeCard";
 import "./Home.css";
 
 const Home = () => {
