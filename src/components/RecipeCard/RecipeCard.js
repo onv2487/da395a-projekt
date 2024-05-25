@@ -6,7 +6,7 @@ const RecipeCard = ({ recipe, onSave}) => (
         <img src={recipe.image} alt={recipe.title} />
         <div className="recipe-content">
             <h2 className="recipe-title">{recipe.title}</h2>
-            <p className="recipe-description" dangerouslySetInnerHTML={{ __html: recipe.description }}>{recipe.description}</p>
+            <p className="recipe-description" >{recipe.description}</p>
             <div className="recipe-details">
                 <p><strong>Förberedelse:</strong> {recipe.prepTime} minuter</p>
                 <p><strong>Matlagning:</strong> {recipe.cookTime} minuter</p>
