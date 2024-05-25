@@ -8,13 +8,10 @@ import './App.css';
 const App = () => {
     const [searchQuery, setSearchQuery] = useState ('');
 
-    const handleSearch = (query) => {
-        setSearchQuery(query);
-    };
 
     return (
         <Router>
-        <Header onSearch={handleSearch}/>
+        <Header />
 
         <Routes>
 

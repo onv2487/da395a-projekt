@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import RecipeCard from "../components/RecipeCard/RecipeCard";
 import "./Home.css";
 
-const Home = ({onSearch}) => {
+const Home = () => {
     const [recipes, setRecipes] = useState([]);
     const [query, setQuery] = useState('');
 
@@ -46,7 +46,6 @@ const Home = ({onSearch}) => {
 
     const handleSearch = (searchQuery) => {
         setQuery(searchQuery);
-        onSearch(searchQuery);
     };
     
     const handleSave = (recipe) => {
