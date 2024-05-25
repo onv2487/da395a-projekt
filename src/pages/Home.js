@@ -36,6 +36,8 @@ const Home = () => {
                         console.log('Recept:', recipe);
                     });
 
+                    console.log(searchResults[0]); 
+
                 } catch (error) {
                     console.error('error fetching recipe', error);
                 }
