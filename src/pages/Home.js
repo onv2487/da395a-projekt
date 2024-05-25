@@ -6,44 +6,43 @@ import "./Home.css";
 
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
+    const [query, setQuery] = useState('');
 
-    useEffect ((query) => {
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=4f5c4482685449dbb9a7d54b3c97b2e5`)
-        .then(respone => respone.json())
-        .then(data => {
-            //hämta all nödvändig data
-            const formattedRecips = data.map(recipe => ({
-                title: recipe.title,
-                image: recipe.image,
-                description: recipe.description,
-                prepTime: recipe.prepTime,
-                cookTime: recipe.cookTime,
-                ingredients: recipe.ingredients,
-            }));
-            setRecipes(formattedRecips);
-        })
-        .catch(error =>
-            console.error('Error fetching recipes:', error));
-        
-    }, []);
-    /*
-    const handleSearch = (query) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=4f5c4482685449dbb9a7d54b3c97b2e5`)
-        .then(response => {
-            const searchResults = response.data.results || [];
-            const recipesData = searchResults.map(result => ({
-                id: result.id,
-                title: result.title,
-                image: result.image,
-            }));
-            setRecipes(recipesData);
-        })
+    useEffect (() => {
+        const fetchRecipes = async () => {
 
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+            try {
+                const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
+                    params: {
+                        query: query,
+                        apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
+                        addRecipeInformation: true 
+                    }
+                });
+
+                const searchResults = response.data.results || [];
+                const formattedRecips = searchResults.map(recipe => ({
+                    title: recipe.title,
+                    image: recipe.image,
+                    description: recipe.summary,
+                    prepTime: recipe.readyInMinutes,
+                    cookTime: recipe.cookingMinutes,
+                    ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : [],
+                    
+                }));
+                setRecipes(formattedRecips);
+            } catch (error) {
+                console.error('error fetching recipe', error);
+            }
+
+        };
+
+        fetchRecipes();
+    }, [query]);
+
+    const handleSearch = (searchQuery) => {
+        setQuery(searchQuery);
     };
-    */
     
     const handleSave = (recipe) => {
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
@@ -56,23 +55,16 @@ const Home = () => {
     };
     
     return (
-
-        <div>
-            {recipes.map((recipe, index) => (
-            <RecipeCard key={index} recipe={recipe} onSave={(savedRecipe) => console.log('Saved recipe:', savedRecipe)} />
-            ))}
-        </div>
-        /*
-            <div className="home">
-                <SearchBar onSearch={handleSearch} />
-                <div className="recipes-container">
-                    {recipes.map(recipe => (
-                        <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
-                    ))}
-                    {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
-                </div>
+        <div className="home">
+            <SearchBar onSearch={handleSearch} />
+            <div className="recipes-container">
+                {recipes.map((recipe) => (
+                    <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
+                ))}
+                {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
             </div>
-        */
+        </div>
+        
     );
 };
 
