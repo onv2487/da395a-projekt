@@ -11,12 +11,16 @@ const SavedRecipes = () => {
         setSavedRecipes(recipes || {});
     }, []);
 
+    const handleCategorySelect = (category) => {
+        setSelectedCategory(category);
+    };
+
     return (
         <div className="saved-recipes">
             <div className="category-selector">
                 <button onClick={() => handleCategorySelect('')}>All</button>
-                    {Object.keys(savedRecipes).map(category => (
-                        <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
+                {Object.keys(savedRecipes).map(category => (
+                    <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
                 ))}
 
             </div>
