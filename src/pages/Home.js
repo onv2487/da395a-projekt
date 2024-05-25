@@ -31,6 +31,11 @@ const Home = () => {
                     
                     }));
                     setRecipes(formattedRecips);
+
+                    formattedRecips.forEach(recipe => {
+                        console.log('Ingredienser för', recipe.title + ':', recipe.ingredients);
+                    });
+
                 } catch (error) {
                     console.error('error fetching recipe', error);
                 }
