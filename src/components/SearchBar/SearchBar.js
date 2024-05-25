@@ -9,7 +9,7 @@ const SearchBar = ({onSearch, isHeader}) => {
         if (query.length >= 3) {
             const delayDebounceFn = setTimeout(() => {
                 onSearch(query);
-            }, 300); // Adjust the debounce delay as needed
+            }, 300);
 
             return () => clearTimeout(delayDebounceFn);
         }

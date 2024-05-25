@@ -46,6 +46,7 @@ const Home = () => {
 
     const handleSearch = (searchQuery) => {
         setQuery(searchQuery);
+        onSearch(searchQuery);
     };
     
     const handleSave = (recipe) => {
