@@ -25,7 +25,7 @@ const SavedRecipes = () => {
 
             </div>
             <div className="recipes-container">
-                {selecttedCategory === '' ? (
+                {selectedCategory === '' ? (
                     //visa alla recipies
                     Object.keys(savedRecipes).map(category => (
                         savedRecipes[category].map(recipe => (
