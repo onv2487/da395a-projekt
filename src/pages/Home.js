@@ -10,39 +10,37 @@ const Home = () => {
 
     useEffect (() => {
         const fetchRecipes = async () => {
+            if(query.length >= 3) {
+                try {
+                    const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
+                        params: {
+                            query: query,
+                            apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
+                            addRecipeInformation: true 
+                        }
+                    });
 
-            try {
-                const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
-                    params: {
-                        query: query,
-                        apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
-                        addRecipeInformation: true 
-                    }
-                });
-
-                const searchResults = response.data.results || [];
-                const formattedRecips = searchResults.map(recipe => ({
-                    title: recipe.title,
-                    image: recipe.image,
-                    description: recipe.summary,
-                    prepTime: recipe.readyInMinutes,
-                    cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
-                    ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : []
+                    const searchResults = response.data.results || [];
+                    const formattedRecips = searchResults.map(recipe => ({
+                        title: recipe.title,
+                        image: recipe.image,
+                        description: recipe.summary,
+                        prepTime: recipe.readyInMinutes,
+                        cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
+                        ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : []
                     
-                }));
-                setRecipes(formattedRecips);
-            } catch (error) {
-                console.error('error fetching recipe', error);
+                    }));
+                    setRecipes(formattedRecips);
+                } catch (error) {
+                    console.error('error fetching recipe', error);
+                }
+            } else {
+                // Rensa recepten om frågan är mindre än 3 tecken
+                setRecipes([]);
             }
 
         };
-
-        if(query.length >= 3) {
-            fetchRecipes();
-        } else {
-            //Rensa recipes om inputen innehåller mindre än 3 bokstäver
-            setRecipes([]);
-        }
+        fetchRecipes();
 
     }, [query]);
 

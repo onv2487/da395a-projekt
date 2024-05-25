@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({onSearch}) => {
+const SearchBar = ({onSearch, isHeader}) => {
     const [query, setQuery] = useState('');
 
     //för att undvika för många API kall
@@ -16,7 +16,7 @@ const SearchBar = ({onSearch}) => {
     }, [query, onSearch]);
 
     return (
-        <div className = "search-bar">
+        <div className ={`search-bar ${isHeader ? 'header-search-bar' : ''}`}>
 
             <input 
             type="text" 
