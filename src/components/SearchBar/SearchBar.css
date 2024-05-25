@@ -1,15 +1,28 @@
 .search-bar {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .search-bar input {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 10px 15px;
     font-size: 16px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    transition: border-color 0.3s;
 }
 
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/*
 search-btn {
     padding: 10px 20px;
     margin-left: 10px;
@@ -23,3 +36,4 @@ search-btn {
 search-btn:hover {
     background-color: #ff8533;
 }
+*/

@@ -37,7 +37,13 @@ const Home = () => {
 
         };
 
-        fetchRecipes();
+        if(query.length >= 3) {
+            fetchRecipes();
+        } else {
+            //Rensa recipes om inputen innehåller mindre än 3 bokstäver
+            setRecipes([]);
+        }
+
     }, [query]);
 
     const handleSearch = (searchQuery) => {
@@ -58,12 +64,17 @@ const Home = () => {
         <div className="home">
             <SearchBar onSearch={handleSearch} />
             <div className="recipes-container">
-                {recipes.length > 0 ? (
-                    recipes.map((recipe, index) => (
-                        <RecipeCard key={index} recipe={recipe} onSave={handleSave} />
-                    ))
+                {query.length < 3 ? (
+                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
+                ) : (
+                    recipes.length > 0 ? (
+                        recipes.map((recipe) => (
+                            <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
+                        ))
+
                 ) : (
                     <p className="no-results">Inga recept hittades. Försök igen!.</p>
+                                     
                 )}
                 
             </div>

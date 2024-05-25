@@ -16,6 +16,7 @@
 .recipe-card img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 .recipe-content {
     padding: 16px;

@@ -4,10 +4,16 @@ import './SearchBar.css';
 const SearchBar = ({onSearch}) => {
     const [query, setQuery] = useState('');
 
-    const handleSearch = () => {
-        onSearch(query);
+    //för att undvika för många API kall
+    useEffect(() => {
+        if (query.length >= 3) {
+            const delayDebounceFn = setTimeout(() => {
+                onSearch(query);
+            }, 300); // Adjust the debounce delay as needed
 
-    };
+            return () => clearTimeout(delayDebounceFn);
+        }
+    }, [query, onSearch]);
 
     return (
         <div className = "search-bar">
@@ -17,11 +23,10 @@ const SearchBar = ({onSearch}) => {
             value={query}  
             placeholder="Sök efter recept..." 
             onChange={(e) => setQuery(e.target.value)} 
+            className="search-input"
             
             />
 
-            <button className="search-btn" onClick={handleSearch}>Sök</button>
-            {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
         </div>
 
     ); 
