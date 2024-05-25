@@ -65,21 +65,18 @@ const Home = () => {
             <SearchBar onSearch={handleSearch} />
             <div className="recipes-container">
                 {query.length < 3 ? (
-                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
+                    <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
                 ) : (
                     recipes.length > 0 ? (
                         recipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
                         ))
-
-                ) : (
-                    <p className="no-results">Inga recept hittades. Försök igen!.</p>
-                                     
+                    ) : (
+                        <p className="no-results">Inga recept hittades. Försök igen!</p>
+                    )
                 )}
-                
             </div>
         </div>
-        
     );
 };
 
