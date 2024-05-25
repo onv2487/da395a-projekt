@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe, onSave}) => (
                 <ul>
                     {recipe.ingredients ? recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
-                    )) : <li>Ingen information</li>}
+                    )) : <li key="no-ingredients">Ingen information</li>}
                 </ul>
 
             </div>
