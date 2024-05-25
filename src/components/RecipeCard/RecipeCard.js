@@ -10,7 +10,7 @@ const RecipeCard = ({ recipe, onSave}) => (
             <div className="recipe-details">
                 <p><strong>Förberedelse:</strong> {recipe.prepTime} minuter</p>
                 <p><strong>Matlagning:</strong> {recipe.cookTime} minuter</p>
-                <p><strong>Ingredienser:</strong> {recipe.ingredients.join(', ')}</p>
+                <p><strong>Ingredienser:</strong> {recipe.ingredients ? recipe.ingredients.join(', ') : 'Ingen information'}</p>
             </div>
             <button onClick= {() => onSave(recipe)}>Spara</button>
         </div> 
