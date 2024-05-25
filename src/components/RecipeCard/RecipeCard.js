@@ -18,8 +18,9 @@ const RecipeCard = ({ recipe, onSave}) => (
                 </ul>
 
             </div>
-            <button onClick= {() => onSave(recipe)}>Spara</button>
+           
         </div> 
+         <button onClick= {() => onSave(recipe)}>Spara</button>
     </div>
 );
 
