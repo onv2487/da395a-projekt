@@ -7,7 +7,7 @@ import "./Home.css";
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
 
-    useEffect (() => {
+    useEffect ((query) => {
         fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=4f5c4482685449dbb9a7d54b3c97b2e5`)
         .then(respone => respone.json())
         .then(data => {
