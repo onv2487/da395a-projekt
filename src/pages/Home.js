@@ -21,19 +21,33 @@ const Home = () => {
                     });
 
                     const searchResults = response.data.results || [];
-                    const formattedRecips = searchResults.map(recipe => ({
-                        title: recipe.title,
-                        image: recipe.image,
-                        description: recipe.summary,
-                        prepTime: recipe.readyInMinutes,
-                        cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
-                        ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : []
-                    
-                    }));
-                    setRecipes(formattedRecips);
+                    const formattedRecips = searchResults.map(async recipe => {
 
-                    console.log(searchResults[0]); 
+                        // Hämta ingredienserna för varje recept
+                        const ingredientResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/ingredientWidget.json`, {
+                            params: {
+                                apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5'
+                            }
+                        });
+                        
+                        const ingredients = ingredientResponse.data.ingredients.map(ingredient => ingredient.name);
 
+                        return {
+                            title: recipe.title,
+                            image: recipe.image,
+                            description: recipe.summary,
+                            prepTime: recipe.readyInMinutes,
+                            cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
+                            ingredients: ingredients
+                        
+
+                        }
+                       
+                    });
+
+                    Promise.all(formattedRecips).then(recipes => {
+                        setRecipes(recipes);
+                    });
                 } catch (error) {
                     console.error('error fetching recipe', error);
                 }
