@@ -32,10 +32,6 @@ const Home = () => {
                     }));
                     setRecipes(formattedRecips);
 
-                    formattedRecips.forEach(recipe => {
-                        console.log('Recept:', recipe);
-                    });
-
                     console.log(searchResults[0]); 
 
                 } catch (error) {
