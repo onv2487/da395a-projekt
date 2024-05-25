@@ -21,6 +21,7 @@ const SearchBar = ({onSearch}) => {
             />
 
             <button className="search-btn" onClick={handleSearch}>Sök</button>
+            {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
         </div>
 
     ); 

@@ -26,8 +26,8 @@ const Home = () => {
                     image: recipe.image,
                     description: recipe.summary,
                     prepTime: recipe.readyInMinutes,
-                    cookTime: recipe.cookingMinutes,
-                    ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : [],
+                    cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
+                    ingredients: recipe.extendedIngredients ? recipe.extendedIngredients.map(ingredient => ingredient.name) : []
                     
                 }));
                 setRecipes(formattedRecips);
@@ -58,10 +58,14 @@ const Home = () => {
         <div className="home">
             <SearchBar onSearch={handleSearch} />
             <div className="recipes-container">
-                {recipes.map((recipe, index) => (
-                    <RecipeCard key={index} recipe={recipe} onSave={handleSave} />
-                ))}
-                {recipes.length === 0 && <p className="no-results">Inga recept hittades. Försök igen med ett annat sökord.</p>}
+                {recipes.length > 0 ? (
+                    recipes.map((recipe, index) => (
+                        <RecipeCard key={index} recipe={recipe} onSave={handleSave} />
+                    ))
+                ) : (
+                    <p className="no-results">Inga recept hittades. Försök igen!.</p>
+                )}
+                
             </div>
         </div>
         

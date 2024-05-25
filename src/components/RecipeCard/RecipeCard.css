@@ -34,13 +34,21 @@
 }
 
 .recipe-details {
-    margin-bottom: 16px;
+    margin-top: 16px;
     font-size: 16px;
     color: #333333;
 }
 
+.recipe-details p {
+    margin: 5px 0;
+}
+
+.recipe-details ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
 .recipe-content button {
-    align-self: flex-start;
     padding: 8px 16px;
     background-color: #ff6600;
     color: #ffffff;
