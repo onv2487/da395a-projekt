@@ -12,7 +12,8 @@ const RecipeCard = ({ recipe, onSave}) => (
                 <p><strong>Matlagning:</strong> {recipe.cookTime} minuter</p>
                 <p><strong>Ingredienser:</strong></p>
                 <ul>
-                    {recipe.ingredients.map((ingredient, index) => (
+                    
+                    {recipe.ingredients && Array.isArray(recipe.ingredients) && recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
