@@ -89,7 +89,6 @@
     .saved-recipe-card img {
         align-self: center;
         width: 100%;
-        object-fit: fill;
     }
 
     .delete-button {
