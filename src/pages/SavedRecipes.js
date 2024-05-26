@@ -51,7 +51,7 @@ const SavedRecipes = () => {
                     //visa alla recipies
                     categories.map(category => (
                         savedRecipes[category].map(recipe => (
-                            <SavedRecipeCard key={recipe.id} recipe={recipe} />
+                            <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
                         ))
                     ))
                 ) : (
