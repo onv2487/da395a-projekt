@@ -57,7 +57,7 @@ const SavedRecipes = () => {
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory].map(recipe => (
-                        <SavedRecipeCard key={recipe.id} recipe={recipe} />
+                        <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
                     ))
 
                 )}
