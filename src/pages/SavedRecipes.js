@@ -50,7 +50,7 @@ const SavedRecipes = () => {
                 {selectedCategory === '' ? (
                     //visa alla recipies
                     categories.length === 0 ? (
-                        <p>Inga Recept hittades.</p>
+                        <p className="no-results">Inga Recept hittades.</p>
                     ) : (
                         categories.map(category => (
                             savedRecipes[category].map(recipe => (
@@ -68,7 +68,7 @@ const SavedRecipes = () => {
                         ))
 
                     ) : (
-                        <p>Inga recept hittades för den valda kategorin.</p>
+                        <p className="no-results">Inga recept hittades för den valda kategorin.</p>
                     )
                 )}
 
