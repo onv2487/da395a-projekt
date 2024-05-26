@@ -8,6 +8,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-card img {
@@ -21,12 +27,13 @@
 .recipe-content {
     flex: 1;
     margin-left: 20px;
+    padding-right: 20px;
 }
 
 .recipe-title{
     font-size: 22px;
-    margin-bottom: 10px;
     color: #333333;
+    font-weight: bold;
 }
 
 .recipe-details {
@@ -52,9 +59,11 @@
     padding: 8px 16px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .delete-button:hover {
     background-color: #ff8533;
+    color: #fff;
 }
