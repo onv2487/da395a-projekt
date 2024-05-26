@@ -86,8 +86,8 @@ const Home = () => {
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
                 ) : (
                     recipes.length > 0 ? (
-                        recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
+                        recipes.map((recipe, index) => (
+                            <RecipeCard key={index} recipe={recipe} onSave={handleSave} />
                         ))
                     ) : (
                         <p className="no-results">Inga recept hittades. Försök igen!</p>
