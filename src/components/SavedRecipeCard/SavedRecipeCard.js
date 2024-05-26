@@ -1,7 +1,7 @@
 import React from 'react';
 import './SavedRecipeCard.css';
 
-const RecipeCard = ({ recipe, onDelete}) => (
+const SavedRecipeCard = ({ recipe, onDelete}) => (
     <div className="recipe-card">
         <img src={recipe.image} alt={recipe.title} />
         <div className="recipe-content">
