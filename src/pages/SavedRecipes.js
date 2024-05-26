@@ -15,7 +15,7 @@ const SavedRecipes = () => {
         setSelectedCategory(category);
     };
 
-    const categories = Object.keys(category);
+    const categories = Object.keys(savedRecipes);
 
     return (
         <div className="saved-recipes">
