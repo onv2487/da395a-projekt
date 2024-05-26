@@ -68,7 +68,7 @@ const Home = () => {
     const handleSave = (recipe) => {
         const category = prompt("Välj en kategori för denna recept:");
         if(!category) return;
-        
+
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
         if (!savedRecipes[category]) {
             savedRecipes[category] = [];
@@ -76,6 +76,12 @@ const Home = () => {
     
         savedRecipes[category].push(recipe);
         localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+    };
+
+    const isSaved = (recipeId) => {
+        return Object.values(savedRecipes).some(categoryRecipes => 
+            categoryRecipes.some(savedRecipe => savedRecipe.id === recipeId)
+        );
     };
     
     return (

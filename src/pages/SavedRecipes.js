@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import RecipeCard from "../components/RecipeCard/RecipeCard";
+import SavedRecipeCard from "../components/SavedRecipeCard/SavedRecipeCard";
 import "./SavedRecipes.css";
 
 const SavedRecipes = () => {
@@ -20,7 +20,7 @@ const SavedRecipes = () => {
     return (
         <div className="saved-recipes">
             <div className="category-selector">
-                <h2>Sparade recept</h2>
+                <h2>Sparade Recept</h2>
                 <button onClick={() => handleCategorySelect('')}>Visa Alla</button>
                 {categories.map(category => (
                     <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
@@ -32,13 +32,13 @@ const SavedRecipes = () => {
                     //visa alla recipies
                     categories.map(category => (
                         savedRecipes[category].map(recipe => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <SavedRecipeCard key={recipe.id} recipe={recipe} />
                         ))
                     ))
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory].map(recipe => (
-                        <RecipeCard key={recipe.id} recipe={recipe} />
+                        <SavedRecipeCard key={recipe.id} recipe={recipe} />
                     ))
 
                 )}
