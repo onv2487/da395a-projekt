@@ -60,7 +60,6 @@
 .delete-button {
     position: sticky;
     top: 0;
-    justify-self: flex-start;
     align-self: flex-start;
     margin-left: auto;
     background-color: #ff6600;
