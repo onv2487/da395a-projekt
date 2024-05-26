@@ -31,7 +31,7 @@ const SavedRecipes = () => {
                 delete updatedSavedRecipes[category];
             }
             setSavedRecipes(updatedSavedRecipes);
-            localStorage.setItem("savedRecipes", JSON.stringify(updateSavedRecipes));
+            localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedRecipes));
         }
     };
 
