@@ -66,12 +66,15 @@ const Home = () => {
     };
     
     const handleSave = (recipe) => {
+        const category = prompt("Välj en kategori för denna recept:");
+        if(!category) return;
+        
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
-        if (!savedRecipes["Allmän"]) {
-            savedRecipes["Allmän"] = [];
+        if (!savedRecipes[category]) {
+            savedRecipes[category] = [];
         }
     
-        savedRecipes["Allmän"].push(recipe);
+        savedRecipes[category].push(recipe);
         localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
     };
     
