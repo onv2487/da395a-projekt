@@ -21,7 +21,7 @@ const SavedRecipes = () => {
         //kopiera savedRecipes till updateSavedRecipes
         let updatedSavedRecipes = {...savedRecipes};
         //hitta kategorin receptet är sparat i
-        const category = object.keys(updatedSavedRecipes).find(category =>
+        const category = Object.keys(updatedSavedRecipes).find(category =>
             updatedSavedRecipes[category].some(savedRecipe => savedRecipe.id === recipe.id)
         );
         //ta bort receptet och kategorin om den blir tom
