@@ -17,6 +17,25 @@ const SavedRecipes = () => {
 
     const categories = Object.keys(savedRecipes);
 
+    const handleDelete = (recipe) => {
+        //kopiera savedRecipes till updateSavedRecipes
+        let updateSavedRecipes = {...savedRecipes};
+        //hitta kategorin receptet är sparat i
+        const category = object.keys(updateSavedRecipes).find(category =>
+            updateSavedRecipes[category].some(savedRecipes => savedRecipe.id === recipe.id)
+        );
+        //ta bort receptet och kategorin om den blir tom
+        if(category) {
+            updateSavedRecipes[category] = updateSavedRecipes[category].filter(savedRecipe => savedRecipe.id !== recipe.id);
+            if(updateSavedRecipes[category].length === 0) {
+                delete updateSavedRecipes[category];
+            }
+            setSavedRecipes(updateSavedRecipes);
+            localStorage.setItem("savedRecipes", JSON.stringify(updateSavedRecipes));
+        }
+    };
+
+
     return (
         <div className="saved-recipes">
             <div className="category-selector">

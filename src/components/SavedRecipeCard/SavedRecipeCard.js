@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe, onSave}) => (
             </div>
            
         </div> 
-         <button className="delete-button" onClick= {() => onSave(recipe)}>Radera</button>
+         <button className="delete-button" onClick= {() => onDelete(recipe)}>Radera</button>
     </div>
 );
 
