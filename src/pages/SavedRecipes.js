@@ -66,8 +66,6 @@ const SavedRecipes = () => {
 
             </div>
         </div>
-
-        console.log(recipe.id)
            
     );
 
