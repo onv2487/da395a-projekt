@@ -24,4 +24,4 @@ const SavedRecipeCard = ({ recipe, onDelete}) => (
     </div>
 );
 
-export default RecipeCard;
+export default SavedRecipeCard;
