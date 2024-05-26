@@ -56,11 +56,14 @@ const SavedRecipes = () => {
                     ))
                 ) : (
                     //Visa recept under valt kategory
-                    savedRecipes[selectedCategory].map((recipe, index) => (
-                        <SavedRecipeCard key={index} recipe={recipe} onDelete={handleDelete} />
-                    ))
+                    savedRecipes[selectedCategory] ? (
+                        savedRecipes[selectedCategory].map(recipe => (
+                            <SavedRecipeCard key={recipe-id} recipe={recipe} onDelete={handleDelete} />
+                        ))
 
-
+                    ) : (
+                        <p>Inga recept hittades för den valda kategorin.</p>
+                    )
                 )}
 
             </div>
