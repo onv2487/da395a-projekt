@@ -49,11 +49,17 @@ const SavedRecipes = () => {
             <div className="recipes-container" key={selectedCategory}>
                 {selectedCategory === '' ? (
                     //visa alla recipies
-                    categories.map(category => (
-                        savedRecipes[category].map(recipe => (
-                            <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
+                    categories.length === 0 ? (
+                        <p>Inga Recept hittades.</p>
+                    ) : (
+                        categories.map(category => (
+                            savedRecipes[category].map(recipe => (
+                                <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
+                            ))
                         ))
-                    ))
+
+                    )
+                    
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory] ? (
