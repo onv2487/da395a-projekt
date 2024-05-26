@@ -79,3 +79,21 @@
     background-color: #ff8533;
     color: #fff;
 }
+
+@media  screen and (max-width: 700px) {
+
+    .saved-recipe-card {
+        flex-direction: column;
+    }
+
+    .saved-recipe-card img {
+        width: 80%;
+        object-fit: cover;
+    }
+
+    .delete-button {
+        position: static;
+    }
+
+    
+}
