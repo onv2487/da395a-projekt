@@ -15,11 +15,13 @@ const SavedRecipes = () => {
         setSelectedCategory(category);
     };
 
+    const categories = Object.keys(category);
+
     return (
         <div className="saved-recipes">
             <div className="category-selector">
                 <button onClick={() => handleCategorySelect('')}>All</button>
-                {Object.keys(savedRecipes).map(category => (
+                {categories.map(category => (
                     <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
                 ))}
 
@@ -27,7 +29,7 @@ const SavedRecipes = () => {
             <div className="recipes-container">
                 {selectedCategory === '' ? (
                     //visa alla recipies
-                    Object.keys(savedRecipes).map(category => (
+                    categories.map(category => (
                         savedRecipes[category].map(recipe => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))
