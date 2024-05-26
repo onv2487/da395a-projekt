@@ -21,7 +21,7 @@ const RecipeCard = ({ recipe, onSave}) => (
             </div>
            
         </div> 
-         <button onClick= {() => onSave(recipe)}>Spara</button>
+         <button className="save-button" onClick= {() => onSave(recipe)}>Spara</button>
     </div>
 );
 
