@@ -77,12 +77,6 @@ const Home = () => {
         savedRecipes[category].push(recipe);
         localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
     };
-
-    const isSaved = (recipeId) => {
-        return Object.values(savedRecipes).some(categoryRecipes => 
-            categoryRecipes.some(savedRecipe => savedRecipe.id === recipeId)
-        );
-    };
     
     return (
         <div className="home">
