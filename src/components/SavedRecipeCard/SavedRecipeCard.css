@@ -1,4 +1,7 @@
 .recipe-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 90%;
     background-color: #fff;
     border-radius: 8px;
@@ -15,6 +18,11 @@
     margin-bottom: 15px;
 }
 
+.recipe-content {
+    flex: 1;
+    margin-left: 20px;
+}
+
 .recipe-title{
     font-size: 22px;
     margin-bottom: 10px;
@@ -22,6 +30,7 @@
 }
 
 .recipe-details {
+    margin-top: 10px;
     color: #333333;
 }
 
@@ -32,6 +41,10 @@
 }
 
 .delete-button {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    margin-left: auto;
     background-color: #ff6600;
     color: #ffffff;
     border: none;
