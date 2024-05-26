@@ -19,18 +19,18 @@ const SavedRecipes = () => {
 
     const handleDelete = (recipe) => {
         //kopiera savedRecipes till updateSavedRecipes
-        let updateSavedRecipes = {...savedRecipes};
+        let updatedSavedRecipes = {...savedRecipes};
         //hitta kategorin receptet är sparat i
-        const category = object.keys(updateSavedRecipes).find(category =>
-            updateSavedRecipes[category].some(savedRecipes => savedRecipe.id === recipe.id)
+        const category = object.keys(updatedSavedRecipes).find(category =>
+            updatedSavedRecipes[category].some(savedRecipe => savedRecipe.id === recipe.id)
         );
         //ta bort receptet och kategorin om den blir tom
         if(category) {
-            updateSavedRecipes[category] = updateSavedRecipes[category].filter(savedRecipe => savedRecipe.id !== recipe.id);
-            if(updateSavedRecipes[category].length === 0) {
-                delete updateSavedRecipes[category];
+            updatedSavedRecipes[category] = updatedSavedRecipes[category].filter(savedRecipe => savedRecipe.id !== recipe.id);
+            if(updatedSavedRecipes[category].length === 0) {
+                delete updatedSavedRecipes[category];
             }
-            setSavedRecipes(updateSavedRecipes);
+            setSavedRecipes(updatedSavedRecipes);
             localStorage.setItem("savedRecipes", JSON.stringify(updateSavedRecipes));
         }
     };
