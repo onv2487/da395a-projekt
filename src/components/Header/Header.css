@@ -36,29 +36,12 @@
     flex-grow: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
+
     .header {
         flex-direction: column;
         align-items: center;
     }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .header-search-bar {
-        margin: 10px 0;
-    }
-}
-
-@media screen and (max-width: 500px) {
 
     .header-search-bar {
         display: none;
@@ -68,6 +51,7 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        margin-top: 20px;
     }
 
     .nav-link {
