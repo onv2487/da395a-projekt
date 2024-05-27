@@ -1,8 +1,8 @@
 .header {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
     padding: 20px;
     margin: 0;
     background-color: #ffffff;
@@ -11,8 +11,8 @@
   }
   
 .logo {
-    font-size: 32px;
     margin: 0;
+    font-size: 28px;
 }
   
 .nav-links{
@@ -24,6 +24,7 @@
     text-decoration: none;
     color: #333333;
     font-weight: bold;
+    transition: color 0.3s;
 
 }
 
@@ -35,10 +36,29 @@
     flex-grow: 1;
 }
 
-@media screen and (max-width: 500px) {
-    .logo {
-        font-size: 28px;
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .header-search-bar {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
 
     .header-search-bar {
         display: none;
@@ -46,7 +66,7 @@
 
     .nav-links {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
     }
 
