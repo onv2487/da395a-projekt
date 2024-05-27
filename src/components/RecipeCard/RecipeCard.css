@@ -69,6 +69,7 @@
 .save-button {
     position: sticky;
     top: 0;
+    bottom: 16px;
     align-self: flex-start;
     margin-left: auto;
     background-color: #ff6600;
@@ -100,9 +101,10 @@
     }
 
     .save-button {
-        position: static;
+        display: block;
         width: 75%;
         align-self: center;
+        margin: 0 auto;
     }
 
     

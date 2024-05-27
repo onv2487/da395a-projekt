@@ -13,8 +13,8 @@ const RecipeCard = ({ recipe, onSave}) => (
                 <p><strong>Ingredienser:</strong></p>
                 <ul>
                     
-                    {recipe.ingredients && Array.isArray(recipe.ingredients) && recipe.ingredients.map((ingredient, recipe) => (
-                        <li key={recipe.id}>{ingredient}</li>
+                    {recipe.ingredients && Array.isArray(recipe.ingredients) && recipe.ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
 
