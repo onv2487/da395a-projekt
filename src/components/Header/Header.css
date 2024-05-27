@@ -11,18 +11,20 @@
   }
   
 .logo {
-    font-size: 34px;
+    font-size: 32px;
     margin: 0;
 }
   
 .nav-links{
     display: flex;
+    gap: 20px;
 }
 
 .nav-link {
     text-decoration: none;
     color: #333333;
     font-weight: bold;
+
 }
 
 .nav-link:hover {
