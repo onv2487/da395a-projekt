@@ -11,7 +11,7 @@ const Header = () => {
                 <Link to="/" className="nav-link">Hem</Link>
                 <Link to="/saved" className="nav-link">Sparade Recept</Link>
             </nav>
-            <SearchBar className="search-bar" isHeader={true} />
+            <SearchBar className="header-search-bar" isHeader={true} />
 
         </header>
     );

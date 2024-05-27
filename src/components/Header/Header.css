@@ -1,6 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
     padding: 20px;
     margin: 0;
@@ -10,28 +11,26 @@
   }
   
 .logo {
+    font-size: 34px;
     margin: 0;
 }
   
 .nav-links{
     display: flex;
-    gap: 20px;
 }
 
 .nav-link {
     text-decoration: none;
     color: #333333;
     font-weight: bold;
-
 }
 
 .nav-link:hover {
     color: #555555;
 }
 
-.search-bar {
+.header-search-bar {
     flex-grow: 1;
-    margin-left: 20px;
 }
 
 @media screen and (max-width: 500px) {
@@ -39,7 +38,7 @@
         font-size: 28px;
     }
 
-    .search-bar {
+    .header-search-bar {
         display: none;
     }
 
