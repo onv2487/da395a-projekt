@@ -101,6 +101,7 @@
     }
 
     .save-button {
+        position: static;
         display: block;
         width: 75%;
         align-self: center;
