@@ -94,13 +94,15 @@
         flex-direction: column;
     }
 
-    .-recipe-card img {
+    .recipe-card img {
         align-self: center;
         width: 100%;
     }
 
-    .delete-button {
+    .save-button {
         position: static;
+        width: 75%;
+        align-self: center;
     }
 
     
