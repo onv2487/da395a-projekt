@@ -67,7 +67,7 @@
 }
 
 .save-button {
-    position: sticky;
+    position: static;
     top: 0;
     bottom: 16px;
     align-self: flex-start;
@@ -101,7 +101,6 @@
     }
 
     .save-button {
-        position: static;
         display: block;
         width: 75%;
         align-self: center;
