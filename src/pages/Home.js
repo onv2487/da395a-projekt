@@ -78,9 +78,9 @@ const Home = ({searchQuery}) => {
     
     return (
         <div className="home">
-            <SearchBar onSearch={setsearchQuery} />
+            <SearchBar onSearch={searchQuery} />
             <div className="recipes-container">
-                {query.length < 3 ? (
+                {searchQuery.length < 3 ? (
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
                 ) : (
                     recipes.length > 0 ? (
