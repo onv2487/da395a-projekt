@@ -6,7 +6,7 @@ const SearchBar = ({onSearch, isHeader}) => {
 
     //för att undvika för många API kall
     useEffect(() => {
-        if (searchQuery.length >= 3 && typeof onSearch === 'function') {
+        if (searchQuery.length >= 3) {
             const delayDebounceFn = setTimeout(() => {
                 onSearch(searchQuery);
             }, 300);

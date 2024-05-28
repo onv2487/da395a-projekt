@@ -6,10 +6,9 @@ import SavedRecipes from './pages/SavedRecipes';
 import './App.css';
 
 const App = () => {
-
-    const [query, setQuery] = useState('');
-    const handleSearch = (searchQuery) => {
-        setQuery(searchQuery);
+    const [searchQuery, setSearchQuery] = useState('');
+    const handleSearch = (query) => {
+        setQuery(query);
     };
 
     return (
@@ -17,10 +16,8 @@ const App = () => {
             <Header onSearch={handleSearch} />
 
             <Routes>
-
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home  searchQuery={searchQuery} />} />
                 <Route path="/saved" element={<SavedRecipes />} />
-
             </Routes>
         </Router>
 

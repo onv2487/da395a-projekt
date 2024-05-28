@@ -4,17 +4,17 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import RecipeCard from "../components/RecipeCard/RecipeCard";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({searchQuery}) => {
     const [recipes, setRecipes] = useState([]);
-    const [query, setQuery] = useState('');
+    
 
     useEffect (() => {
         const fetchRecipes = async () => {
-            if(query.length >= 3) {
+            if(searchQuery.length >= 3) {
                 try {
                     const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
                         params: {
-                            query: query,
+                            query: searchQuery,
                             apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
                             addRecipeInformation: true 
                         }
@@ -60,7 +60,7 @@ const Home = () => {
         };
         fetchRecipes();
 
-    }, [query]);
+    }, [searchQuery]);
 
     const handleSearch = (searchQuery) => {
         setQuery(searchQuery);
@@ -82,7 +82,7 @@ const Home = () => {
     
     return (
         <div className="home">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={searchQuery} />
             <div className="recipes-container">
                 {query.length < 3 ? (
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
