@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './SearchBar.css';
 
 const SearchBar = ({onSearch, isHeader}) => {
-    const [query, setQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
 
     //för att undvika för många API kall
     useEffect(() => {
-        if (query.length >= 3) {
+        if (searchQuery.length >= 3) {
             const delayDebounceFn = setTimeout(() => {
-                onSearch(query);
+                onSearch(searchQuery);
             }, 300);
 
             return () => clearTimeout(delayDebounceFn);
         }
-    }, [query, onSearch]);
+    }, [searchQuery, onSearch]);
 
     return (
         <div className ={`search-bar ${isHeader ? 'header-search-bar' : ''}`}>
@@ -22,7 +22,7 @@ const SearchBar = ({onSearch, isHeader}) => {
             type="text" 
             value={query}  
             placeholder="Sök efter recept..." 
-            onChange={(e) => setQuery(e.target.value)} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
             className="search-input"
             
             />
