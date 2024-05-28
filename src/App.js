@@ -6,6 +6,8 @@ import SavedRecipes from './pages/SavedRecipes';
 import './App.css';
 
 const App = () => {
+
+    const [query, setQuery] = useState('');
     const handleSearch = (searchQuery) => {
         setQuery(searchQuery);
     };
