@@ -20,7 +20,7 @@ const SearchBar = ({onSearch, isHeader}) => {
 
             <input 
             type="text" 
-            value={query}  
+            value={searchQuery}  
             placeholder="Sök efter recept..." 
             onChange={(e) => setSearchQuery(e.target.value)} 
             className="search-input"
