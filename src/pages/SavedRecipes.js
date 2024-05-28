@@ -56,8 +56,9 @@ const SavedRecipes = () => {
                         <p className="no-results">Inga Recept hittades.</p>
                     ) : (
                         categories.map(category => (
-                            savedRecipes[category].map(recipe => {
-                                console.log(recipe.id);
+                            savedRecipes[category].map((recipe, index) => {
+                                const recipeId = recipe.id ||  `temp-id-${category}-${index}`;
+                                console.log(`Recipe ID: ${recipeId}`);
                                 return (
                                     <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
                                 );
@@ -69,9 +70,13 @@ const SavedRecipes = () => {
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory] ? (
-                        savedRecipes[selectedCategory].map(recipe => (
-                            <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
-                        ))
+                        savedRecipes[selectedCategory].map((recipe, index) => {
+                            const recipeId = recipe.id ||  `temp-id-${selectedCategory}-${index}`;
+                            console.log(`Recipe ID: ${recipeId}`);
+                            return (
+                                <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
+                            );
+                        })
 
                     ) : (
                         <p className="no-results">Inga recept hittades för den valda kategorin.</p>
