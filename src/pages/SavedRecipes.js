@@ -57,7 +57,7 @@ const SavedRecipes = () => {
                     ) : (
                         categories.map(category => (
                             savedRecipes[category].map((recipe, index) => {
-                                const recipeId = recipe.id ||  `temp-id-${category}-${index}`;
+                                const recipeId = recipe.id ||  `temp-id-${category}-${index}-${Date.now()}`;
                                 console.log(`Recipe ID: ${recipeId}`);
                                 return (
                                     <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
@@ -71,7 +71,7 @@ const SavedRecipes = () => {
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory] ? (
                         savedRecipes[selectedCategory].map((recipe, index) => {
-                            const recipeId = recipe.id ||  `temp-id-${selectedCategory}-${index}`;
+                            const recipeId = recipe.id ||  `temp-id-${selectedCategory}-${index}-${Date.now()}`;
                             console.log(`Recipe ID: ${recipeId}`);
                             return (
                                 <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
