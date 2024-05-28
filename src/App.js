@@ -16,7 +16,7 @@ const App = () => {
             <Header onSearch={handleSearch} />
 
             <Routes>
-                <Route path="/" element={<Home  searchQuery={searchQuery} />} />
+                <Route path="/" element={<Home  searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
                 <Route path="/saved" element={<SavedRecipes />} />
             </Routes>
         </Router>

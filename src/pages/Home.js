@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import RecipeCard from "../components/RecipeCard/RecipeCard";
 import "./Home.css";
 
-const Home = ({searchQuery}) => {
+const Home = ({ searchQuery, setSearchQuery }) => {
     const [recipes, setRecipes] = useState([]);
     
 
@@ -78,7 +78,7 @@ const Home = ({searchQuery}) => {
     
     return (
         <div className="home">
-            <SearchBar onSearch={searchQuery} />
+            <SearchBar onSearch={setSearchQuery} />
             <div className="recipes-container">
                 {searchQuery.length < 3 ? (
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
