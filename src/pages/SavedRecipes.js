@@ -55,10 +55,10 @@ const SavedRecipes = () => {
                         <p className="no-results">Inga Recept hittades.</p>
                     ) : (
                         categories.map(category =>
-                            savedRecipes[category].map((recipe) => {
+                            savedRecipes[category].map((recipe, index) => {
                                 console.log(recipe.id);
                                 return (
-                                    <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
+                                    <SavedRecipeCard key={`${recipe.id}-${category}`} recipe={recipe}  onDelete={handleDelete}/>
                                 );
                             })
                         )
