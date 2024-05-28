@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Router>
             <Header onSearch={handleSearch} />
-            <SearchBar searchQuery={searchQuery} onSearch={handleSearch}
+            <SearchBar searchQuery={searchQuery} onSearch={handleSearch} />
 
             <Routes>
 
