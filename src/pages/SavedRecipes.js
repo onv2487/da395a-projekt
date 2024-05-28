@@ -38,7 +38,6 @@ const SavedRecipes = () => {
         }
     };
 
-
     return (
         <div className="saved-recipes">
             <div className="category-selector">
@@ -55,28 +54,24 @@ const SavedRecipes = () => {
                     categories.length === 0 ? (
                         <p className="no-results">Inga Recept hittades.</p>
                     ) : (
-                        categories.map(category => (
-                            savedRecipes[category].map((recipe, index) => {
-                                const recipeId = recipe.id ||  `temp-id-${category}-${index}-${Date.now()}`;
-                                console.log(`Recipe ID: ${recipeId}`);
+                        categories.map(category =>
+                            savedRecipes[category].map((recipe) => {
+                                
                                 return (
                                     <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
                                 );
                             })
-                        ))
+                        )
 
                     )
                     
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory] ? (
-                        savedRecipes[selectedCategory].map((recipe, index) => {
-                            const recipeId = recipe.id ||  `temp-id-${selectedCategory}-${index}-${Date.now()}`;
-                            console.log(`Recipe ID: ${recipeId}`);
-                            return (
-                                <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
-                            );
-                        })
+                        savedRecipes[selectedCategory].map((recipe) => (
+                            <SavedRecipeCard key={recipe.id} recipe={recipe} onDelete={handleDelete} />
+                            
+                        ))
 
                     ) : (
                         <p className="no-results">Inga recept hittades för den valda kategorin.</p>

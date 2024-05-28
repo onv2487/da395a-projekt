@@ -70,6 +70,12 @@ const Home = () => {
         if(!category) return;
 
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
+        // Ge en unik id om receptet inte redan har en
+        if (!recipe.id) {
+            recipe.id = `${category}-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
+        }
+
+        
         if (!savedRecipes[category]) {
             savedRecipes[category] = [];
         }
