@@ -27,9 +27,12 @@ const SavedRecipes = () => {
         //ta bort receptet och kategorin om den blir tom
         if(category) {
             updatedSavedRecipes[category] = updatedSavedRecipes[category].filter(savedRecipe => savedRecipe.id !== recipe.id);
+            //radera kategorin om den blir tom
             if(updatedSavedRecipes[category].length === 0) {
                 delete updatedSavedRecipes[category];
             }
+
+            //Updatering av localStorage och state
             setSavedRecipes(updatedSavedRecipes);
             localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedRecipes));
         }
