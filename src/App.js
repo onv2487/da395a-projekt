@@ -8,7 +8,7 @@ import './App.css';
 const App = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const handleSearch = (query) => {
-        setQuery(query);
+        setSearchQuery(query);
     };
 
     return (
