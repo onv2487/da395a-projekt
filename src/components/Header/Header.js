@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from "../SearchBar/SearchBar";
 import './Header.css';
 
-const Header = () => {
+const Header = ({onSearch}) => {
     return(
         <header className="header">
             <h1 className="logo">KöksKompis</h1>
