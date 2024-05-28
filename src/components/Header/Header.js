@@ -8,9 +8,11 @@ const Header = ({onSearch}) => {
         <header className="header">
             <h1 className="logo">KöksKompis</h1>
             <nav className="nav-links">
+                {/*länkar */}
                 <Link to="/" className="nav-link">Hem</Link>
                 <Link to="/saved" className="nav-link">Sparade Recept</Link>
             </nav>
+            {/* Sökfält i header, skickar sökquery till on search-funktionen */}
             <SearchBar className="header-search-bar" isHeader={true} onSearch={onSearch} />
 
         </header>

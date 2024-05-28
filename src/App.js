@@ -6,6 +6,7 @@ import SavedRecipes from './pages/SavedRecipes';
 import './App.css';
 
 const App = () => {
+    //State för sökning och funktion som uppdaterar sökningen
     const [searchQuery, setSearchQuery] = useState('');
     const handleSearch = (query) => {
         setSearchQuery(query);
@@ -14,7 +15,7 @@ const App = () => {
     return (
         <Router>
             <Header onSearch={handleSearch} />
-
+            {/* Routes för att definiera vägarna för olika sidor */}
             <Routes>
                 <Route path="/" element={<Home  searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
                 <Route path="/saved" element={<SavedRecipes />} />

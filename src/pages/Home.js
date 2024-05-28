@@ -7,9 +7,10 @@ import "./Home.css";
 const Home = ({ searchQuery, setSearchQuery }) => {
     const [recipes, setRecipes] = useState([]);
     
-
+    //>Funktion för att hämta recept 
     useEffect (() => {
         const fetchRecipes = async () => {
+            // Kontrollera om sökfrågan är längre än 3 bokstäver 
             if(searchQuery.length >= 3) {
                 try {
                     const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
@@ -62,12 +63,12 @@ const Home = ({ searchQuery, setSearchQuery }) => {
 
     }, [searchQuery]);
     
+    //Funktion för att spara recept 
     const handleSave = (recipe) => {
         const category = prompt("Välj en kategori för denna recept:");
         if(!category) return;
 
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
-        // Ge en unik id om receptet inte redan har en
         if (!savedRecipes[category]) {
             savedRecipes[category] = [];
         }
@@ -78,16 +79,20 @@ const Home = ({ searchQuery, setSearchQuery }) => {
     
     return (
         <div className="home">
+            {/* Sökfält för att söka efter recept */}
             <SearchBar onSearch={setSearchQuery} />
             <div className="recipes-container">
+                {/* Visa meddelande om sökfrågan är för kort */}
                 {searchQuery.length < 3 ? (
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
                 ) : (
+                    //visa resultat om recept hittas
                     recipes.length > 0 ? (
                         recipes.map((recipe, index) => (
                             <RecipeCard key={`${recipe.id}-${index}`} recipe={recipe} onSave={handleSave} />
                         ))
                     ) : (
+                        //Meddelande om inga recept hittas 
                         <p className="no-results">Inga recept hittades. Försök igen!</p>
                     )
                 )}
