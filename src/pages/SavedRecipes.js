@@ -43,7 +43,7 @@ const SavedRecipes = () => {
         <div className="saved-recipes">
             <div className="category-selector">
                 <h2>Sparade Recept</h2>
-                <button onClick={() => handleCategorySelect('')}>Alla</button>
+                <button key="alla" onClick={() => handleCategorySelect('')}>Alla</button>
                 {categories.map(category => (
                     <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
                 ))}
@@ -56,9 +56,12 @@ const SavedRecipes = () => {
                         <p className="no-results">Inga Recept hittades.</p>
                     ) : (
                         categories.map(category => (
-                            savedRecipes[category].map(recipe => (
-                                <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
-                            ))
+                            savedRecipes[category].map(recipe => {
+                                console.log(recipe.id);
+                                return (
+                                    <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
+                                );
+                            })
                         ))
 
                     )
