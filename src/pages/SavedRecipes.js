@@ -56,7 +56,7 @@ const SavedRecipes = () => {
                     ) : (
                         categories.map(category =>
                             savedRecipes[category].map((recipe) => {
-                                
+                                console.log(recipe.id);
                                 return (
                                     <SavedRecipeCard key={recipe.id} recipe={recipe}  onDelete={handleDelete}/>
                                 );

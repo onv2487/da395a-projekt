@@ -33,6 +33,7 @@ const Home = () => {
                         const ingredients = ingredientResponse.data.ingredients.map(ingredient => ingredient.name);
 
                         return {
+                            id: recipe.id,
                             title: recipe.title,
                             image: recipe.image,
                             description: recipe.summary,
@@ -72,10 +73,10 @@ const Home = () => {
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || {};
         // Ge en unik id om receptet inte redan har en
         if (!recipe.id) {
-            recipe.id = `${category}-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
+            recipe.id = `${category}-${Math.random().toString(36)}-${Date.now()}`;
         }
 
-        
+
         if (!savedRecipes[category]) {
             savedRecipes[category] = [];
         }
@@ -93,7 +94,7 @@ const Home = () => {
                 ) : (
                     recipes.length > 0 ? (
                         recipes.map((recipe, index) => (
-                            <RecipeCard key={index} recipe={recipe} onSave={handleSave} />
+                            <RecipeCard key={recipe.id} recipe={recipe} onSave={handleSave} />
                         ))
                     ) : (
                         <p className="no-results">Inga recept hittades. Försök igen!</p>
