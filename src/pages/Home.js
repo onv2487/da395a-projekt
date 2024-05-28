@@ -61,10 +61,6 @@ const Home = ({searchQuery}) => {
         fetchRecipes();
 
     }, [searchQuery]);
-
-    const handleSearch = (searchQuery) => {
-        setQuery(searchQuery);
-    };
     
     const handleSave = (recipe) => {
         const category = prompt("Välj en kategori för denna recept:");
@@ -82,7 +78,7 @@ const Home = ({searchQuery}) => {
     
     return (
         <div className="home">
-            <SearchBar onSearch={searchQuery} />
+            <SearchBar onSearch={setsearchQuery} />
             <div className="recipes-container">
                 {query.length < 3 ? (
                     <p className="no-results">Skriv minst tre bokstäver för att söka efter recept.</p>
