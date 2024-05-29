@@ -9,7 +9,7 @@ const SearchBar = ({onSearch, isHeader}) => {
     useEffect(() => {
         if (searchQuery.length >= 3) {
             const delayDebounceFn = setTimeout(() => {
-                 // Anropa den funktion som skickats från förälderkomponenten för att utföra sökning
+                // Anropa den funktion som skickats från förälderkomponenten för att utföra sökning
                 onSearch(searchQuery);
             }, 300);
 
