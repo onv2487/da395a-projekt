@@ -1,0 +1,36 @@
+.add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #c7c4c4;
+}
+
+.add-recipe-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.ingredients-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ingredients-section button {
+    align-self: start;
+    margin-top: 10px;
+}
+
+.rounded-button {
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

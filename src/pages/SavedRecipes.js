@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SavedRecipeCard from "../components/SavedRecipeCard/SavedRecipeCard";
 import "./SavedRecipes.css";
 
@@ -24,16 +24,16 @@ const SavedRecipes = () => {
 
     const handleDelete = (recipe) => {
         //kopiera savedRecipes till updateSavedRecipes
-        let updatedSavedRecipes = {...savedRecipes};
+        let updatedSavedRecipes = { ...savedRecipes };
         //hitta kategorin receptet är sparat i
         const category = Object.keys(updatedSavedRecipes).find(category =>
             updatedSavedRecipes[category].some(savedRecipe => savedRecipe.id === recipe.id)
         );
         //ta bort receptet och kategorin om den blir tom
-        if(category) {
+        if (category) {
             updatedSavedRecipes[category] = updatedSavedRecipes[category].filter(savedRecipe => savedRecipe.id !== recipe.id);
             //radera kategorin om den blir tom
-            if(updatedSavedRecipes[category].length === 0) {
+            if (updatedSavedRecipes[category].length === 0) {
                 delete updatedSavedRecipes[category];
             }
 
@@ -64,20 +64,20 @@ const SavedRecipes = () => {
                                 console.log(recipe.id);
                                 return (
                                     // Använd en unik key genom att kombinera recipe.id och kategori
-                                    <SavedRecipeCard key={`${recipe.id}-${category}`}  recipe={recipe}  onDelete={handleDelete}/>
+                                    <SavedRecipeCard key={`${recipe.id}-${category}`} recipe={recipe} onDelete={handleDelete} />
                                 );
                             })
                         )
 
                     )
-                    
+
                 ) : (
                     //Visa recept under valt kategory
                     savedRecipes[selectedCategory] ? (
                         savedRecipes[selectedCategory].map((recipe) => (
                             // Använd en unik key genom att kombinera recipe.id och kategori
                             <SavedRecipeCard key={`${recipe.id}-${selectedCategory}`} recipe={recipe} onDelete={handleDelete} />
-                            
+
                         ))
 
                     ) : (
@@ -87,7 +87,7 @@ const SavedRecipes = () => {
 
             </div>
         </div>
-           
+
     );
 
 };
