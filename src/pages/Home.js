@@ -33,7 +33,16 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                     });
 
                     const searchResults = response.data.results || [];
+
                     const formattedRecips = searchResults.map(async recipe => {
+                        //Hämta detaljerad information om recept för att kunna extrahera källans URL
+                        const recipeInfoResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/information`, {
+                            params: {
+                                apiKey: 'c6705cf968914fa1b0973dc2bb0b79eb',
+                            }
+                        });
+
+                        const recipeInfo = recipeInfoResponse.data;
 
                         // Hämta ingredienserna för varje recept
                         const ingredientResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/ingredientWidget.json`, {
@@ -50,9 +59,9 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                             image: recipe.image,
                             description: recipe.summary,
                             prepTime: recipe.readyInMinutes,
-                            link: recipe.link,
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
-                            ingredients: ingredients
+                            ingredients: ingredients,
+                            link: recipeInfo.sourceUrl
 
                         }
 
