@@ -27,7 +27,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                     const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
                         params: {
                             query: searchQuery,
-                            apiKey: 'c6705cf968914fa1b0973dc2bb0b79eb',
+                            apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
                             addRecipeInformation: true
                         }
                     });
@@ -38,19 +38,18 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                         // Hämta ingredienserna för varje recept
                         const ingredientResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/ingredientWidget.json`, {
                             params: {
-                                apiKey: 'c6705cf968914fa1b0973dc2bb0b79eb',
+                                apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
                             }
                         });
 
                         const ingredients = ingredientResponse.data.ingredients.map(ingredient => ingredient.name);
-
                         return {
                             id: recipe.id,
                             title: recipe.title,
                             image: recipe.image,
                             description: recipe.summary,
                             prepTime: recipe.readyInMinutes,
-                            link: recipe.link,
+                            link: recipe.sourceUrl,
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
                             ingredients: ingredients
 
