@@ -59,7 +59,7 @@
     margin-right: 5px;
 }
 .recipe-link a{
-    max-width: 100%;
+    width: 100%;
     margin-top: 10px;
     word-wrap: break-word;
     overflow-wrap: break-word;
