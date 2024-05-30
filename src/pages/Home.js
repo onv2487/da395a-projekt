@@ -38,7 +38,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                         //Hämta detaljerad information om recept för att kunna extrahera källans URL
                         const recipeInfoResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/information`, {
                             params: {
-                                apiKey: 'c6705cf968914fa1b0973dc2bb0b79eb',
+                                apiKey: '4f5c4482685449dbb9a7d54b3c97b2e5',
                             }
                         });
 
