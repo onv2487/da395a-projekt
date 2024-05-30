@@ -59,6 +59,11 @@
     margin-right: 5px;
 }
 
+.recipe-link {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .delete-button {
     position: sticky;
     top: 0;
