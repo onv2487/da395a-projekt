@@ -59,10 +59,10 @@
     margin-right: 5px;
 }
 .recipe-link a{
-    width: 100%;
-    margin-top: 10px;
-    word-wrap: break-word;
     overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .delete-button {
