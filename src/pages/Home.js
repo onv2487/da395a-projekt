@@ -64,6 +64,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
                             ingredients: ingredients,
                             link: recipeInfo.sourceUrl
+                            
 
                         }
 
