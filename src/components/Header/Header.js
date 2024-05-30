@@ -14,7 +14,7 @@ const Header = ({ onSearch }) => {
                 <Link to="/own-recipes" className="nav-link">Egna Recept</Link>
             </nav>
             {/* Sökfält i header, skickar sökquery till on search-funktionen */}
-            <SearchBar className="header-search-bar" isHeader={true} onSearch={onSearch} />
+            <SearchBar className="header-search-bar" isHeader={true} onSearch={onSearch} id="header-search" />
 
         </header>
     );

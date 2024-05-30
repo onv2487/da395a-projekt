@@ -60,7 +60,6 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                             image: recipe.image,
                             description: recipe.summary,
                             prepTime: recipe.readyInMinutes,
-                            link: recipe.sourceUrl,
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
                             ingredients: ingredients,
                             link: recipeInfo.sourceUrl
@@ -105,7 +104,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
     return (
         <div className="home">
             {/* Sökfält för att söka efter recept */}
-            <SearchBar onSearch={setSearchQuery} />
+            <SearchBar onSearch={setSearchQuery} id="home-search" />
             <button onClick={handleAddRecipeClick} className="rounded-button">
                 Lägg till nytt recept
             </button>
