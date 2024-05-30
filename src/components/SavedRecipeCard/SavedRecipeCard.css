@@ -58,8 +58,7 @@
     font-size: 12px;
     margin-right: 5px;
 }
-
-.recipe-link {
+.recipe-link a{
     max-width: 100%;
     margin-top: 10px;
     word-wrap: break-word;
