@@ -23,7 +23,6 @@ const SearchBar = ({ onSearch, isHeader, id }) => {
             {/* Input-fält för att skriva in sökfrågan */}
             <input 
                 type="text" 
-                id={id}
                 name="search"
                 value={searchQuery}  
                 placeholder="Sök efter recept..." 

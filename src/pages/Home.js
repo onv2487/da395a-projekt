@@ -104,7 +104,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
     return (
         <div className="home">
             {/* Sökfält för att söka efter recept */}
-            <SearchBar onSearch={setSearchQuery} id="home-search" />
+            <SearchBar onSearch={setSearchQuery} />
             <button onClick={handleAddRecipeClick} className="rounded-button">
                 Lägg till nytt recept
             </button>
