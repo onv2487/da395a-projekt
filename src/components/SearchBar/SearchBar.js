@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({onSearch, isHeader}) => {
+const SearchBar = ({ onSearch, isHeader, id }) => {
     //State för sökfrågan
     const [searchQuery, setSearchQuery] = useState('');
 
