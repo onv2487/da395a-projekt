@@ -60,6 +60,8 @@
 }
 
 .recipe-link {
+    max-width: 100%;
+    margin-top: 10px;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -102,4 +104,10 @@
     }
 
     
+}
+
+@media screen and (max-width: 450px) {
+    .saved-recipe-details ul {
+        flex-direction: column;
+    }
 }
