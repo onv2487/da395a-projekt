@@ -61,7 +61,7 @@ const OwnRecipes = () => {
   return (
     <div className="saved-recipes">
       <div className="category-selector">
-        <h2>Sparade Recept</h2>
+        <h2>Egna Recept</h2>
         <button key="alla" onClick={() => handleCategorySelect('')}>Alla</button>
         {categories.length > 0 && categories.map(category => (
           <button key={category} onClick={() => handleCategorySelect(category)}>{category}</button>
