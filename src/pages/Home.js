@@ -33,6 +33,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                     });
 
                     const searchResults = response.data.results || [];
+                    console.log('Search results:', searchResults);
 
                     const formattedRecips = searchResults.map(async recipe => {
                         //Hämta detaljerad information om recept för att kunna extrahera källans URL
@@ -43,6 +44,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                         });
 
                         const recipeInfo = recipeInfoResponse.data;
+                        console.log('Recipe info:', recipeInfo); 
 
                         // Hämta ingredienserna för varje recept
                         const ingredientResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/ingredientWidget.json`, {

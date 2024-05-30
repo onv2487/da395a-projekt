@@ -19,7 +19,7 @@ const SavedRecipeCard = ({ recipe, onDelete }) => (
                         <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
-                <p><strong>Länk:</strong> {recipe.link} </p>
+                <p><strong>Länk:</strong> <a href={recipe.link} target="_blank" rel="noopener noreferrer">{recipe.link}</a></p>
 
             </div>
             {/* Knapp för att radera receptet */}
