@@ -64,10 +64,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
                             ingredients: ingredients,
                             link: recipeInfo.sourceUrl
-                            
-
                         }
-
                     });
 
                     Promise.all(formattedRecips).then(recipes => {
@@ -80,7 +77,6 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                 // Rensa recepten om frågan är mindre än 3 tecken
                 setRecipes([]);
             }
-
         };
         fetchRecipes();
 
