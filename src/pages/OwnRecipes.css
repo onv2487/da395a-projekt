@@ -1,52 +1,3 @@
-.own-recipes {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.own-recipes-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.own-recipe-card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 90%;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
-}
-
-.own-recipe-card:hover {
-    transform: scale(1.02);
-}
-
-.own-recipe-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.own-recipe-details h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.own-recipe-details ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.own-recipe-details ul li {
-    list-style-type: disc;
-}
-
 .delete-button {
     align-self: flex-end;
     background-color: #ff5722;
@@ -61,19 +12,4 @@
 
 .delete-button:hover {
     background-color: #e64a19;
-}
-
-.own-recipe-details ul {
-    padding-left: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.own-recipe-details ul li::before {
-    content: '\2022';
-    color: #333333;
-    font-size: 12px;
-    margin-right: 5px;
 }

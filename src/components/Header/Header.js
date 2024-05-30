@@ -6,7 +6,7 @@ import './Header.css';
 const Header = ({ onSearch }) => {
     return (
         <header className="header">
-            <h1 className="logo"><a href="/" >KöksKompis</a></h1>
+            <h1 className="logo"><a href="/">KöksKompis</a></h1>
             <nav className="nav-links">
                 {/*länkar */}
                 <Link to="/" className="nav-link">Hem</Link>
