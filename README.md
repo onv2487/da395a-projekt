@@ -18,7 +18,7 @@ React är ramverket som används för denna webbapplikation, eftersom den är fl
 
 Vue kanske har en lägre inlärningskurva, men med tanke på att vi redan har erfarenhet av React, minskas detta arguments tyngd för valet mellan react och Vue. Å andra sidan är Angular något helt nytt för mig/oss vilket var helt utesluten. Reacts enkelhet och fokus på komponentbaserad utveckling kändes mest lämplig för detta projekt. 
 
-Spoonacular API används för att hämta receptdata. API:et är väldokumenterat, tillförlitlig och erbjuder en mängs olika recept. 
+Spoonacular API används för att hämta receptdata. API:et är väldokumenterat, tillförlitlig och erbjuder en mängd olika recept. 
 
 ## Funktionalitet
 1. Söka Recept: Användaren har möjlighet att söka olika recept.
@@ -34,7 +34,11 @@ Spoonacular API används för att hämta receptdata. API:et är väldokumenterat
 
 ## Bibliotek och Verktyg 
 Nedan bibliotek och verkty används i denna applikation: 
-1. React: Ett JavaScript-bibliotek för att bygga användargränssnitt. 
-2. React Router: Ett bibliotek för att hantera navigering och växling av sidor i React-applikation.
-3. Axios: Ett JavaScript-bibliotek för att göra HTTP-begäranden från webbläsaren
-4. Spoonacular API: Ett externt API som tidigare inte använts i kursen. API hämtar receptdata och information om bland annat ingredienser för olika maträtter. 
+1. React:
+Ett JavaScript-bibliotek för att bygga användargränssnitt. 
+2. React Router:
+Ett bibliotek för att hantera navigering och växling av sidor i React-applikation.
+3. Axios:
+Ett JavaScript-bibliotek för att göra HTTP-begäranden från webbläsaren
+4. Spoonacular API:
+Ett externt API som tidigare inte använts i kursen. API hämtar receptdata och information om bland annat ingredienser för olika maträtter. 

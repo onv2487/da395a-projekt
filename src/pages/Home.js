@@ -50,6 +50,7 @@ const Home = ({ searchQuery, setSearchQuery, addRecipe }) => {
                             image: recipe.image,
                             description: recipe.summary,
                             prepTime: recipe.readyInMinutes,
+                            link: recipe.link,
                             cookTime: recipe.cookingMinutes || recipe.readyInMinutes,
                             ingredients: ingredients
 
